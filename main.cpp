@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 namespace space1
 {
     void greeting();
