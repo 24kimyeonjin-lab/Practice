@@ -1,47 +1,20 @@
 #include <iostream>
+#include <array>
 
-
-namespace space1
+int  main()
 {
-    void greeting();
-}
+    std::array<int, 3> a{1, 2, 3};
+    std::cout << a.at(0) << std::endl;
+    std::cout << a[1] << std::endl;
+    std::cout << a.size() << std::endl;
 
-namespace space2
-{
-    void greetings();
-}
+    for(int i=0; i<a.size(); ++i)
+        std::cout << a[i] << ' ';
+    std::cout << std::endl;
 
-void greeting();
-
-int main()
-{
-    space1::greeting();
-    space2::greetings();
-    greeting();
+    for(const auto& ai : a)
+        std::cout << ai << ' ';
+    std::cout << std::endl;
 
     return 0;
-}
-
-namespace space1
-{
-    void greeting()
-    {
-        std::cout << "Hello from namespace space1.\n";
-    }
-}
-namespace space2
-{
-    void greeting()
-    {
-        std::cout << "Greetings from namespace space2.\n";
-    }
-    void greetings()
-    {
-        greeting();
-        ::greeting();
-    }
-}
-void greeting()
-{
-    std::cout << "Global Hello!\n";
 }
